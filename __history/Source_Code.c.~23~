@@ -1,0 +1,32 @@
+#include <16f877a.h>
+#fuses xt, nowdt, noput, noprotect, nolvp, nobrownout
+#use delay(clock = 4M)
+#define  TIME  500  //Tiempo de parpadeo del led conectado al PIN_B1
+#INT_EXT
+void INT_RB0(void){
+   //if(input(PIN_B0) == true){
+      //output_high(PIN_B2);
+      output_toggle(PIN_B2);
+   //}
+}
+//Prototipo de funciones
+void configurar_hardware(void);
+
+void configurar_hardware(void){
+   set_tris_b(0x01);
+   output_b(0x00);
+   //Se activan las resistencias pull-ups
+   PORT_B_PULLUPS(true);
+   //habilitar interrupcion INT RB0
+   ext_int_edge(L_TO_H);
+   enable_interrupts(INT_EXT);
+   enable_interrupts(GLOBAL);
+}
+
+void main(void){
+   configurar_hardware();
+   while(true){
+      output_toggle(PIN_B1);
+      delay_ms(TIME);
+   }
+}

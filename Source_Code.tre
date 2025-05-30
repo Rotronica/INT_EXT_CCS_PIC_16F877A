@@ -1,0 +1,6 @@
+ÀÄSource_Code
+   ÃÄMAIN  0/26  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄconfigurar_hardware  0/20  Ram=0
+   ³  ÀÄ@delay_ms1  0/23  Ram=1
+   ÀÄINT_RB0  0/9  Ram=0

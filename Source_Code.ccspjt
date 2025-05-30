@@ -1,0 +1,20 @@
+[PROJECT]
+Target=Source_Code.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Source_Code.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Source_Code.c]
+Type=4
+[mru-list]
+1=Source_Code.c
+[Opened Files]
+1=Source_Code.c
+2=C:\Program Files (x86)\PICC\Devices\16f877a.h
+3=
+[Units]
+Count=1
+1=Source_Code (main)

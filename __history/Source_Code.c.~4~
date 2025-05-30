@@ -1,0 +1,28 @@
+#include <16f877a.h>
+#fuses xt, nowdt, noput, noprotect, nolvp, nobrownout
+#use delay(clock = 4M)
+
+#INT_EXT
+void INT_RB0(void){
+   output_low(PIN_B1);
+   output_toggle(PIN_B2);
+}
+//Prototipo de funciones
+void configurar_hardware(void);
+
+void configurar_hardware(void){
+   set_tris_b(0x01);
+   output_b(0x00);
+   //Se activan las resistencias pull-ups
+   PORT_B_PULLUPS(true);
+   //habilitar interrupcion INT RB0
+   interrupt_enabled(INT_RB);
+   interrupt_enabled(GLOBAL);
+}
+
+void main(void){
+   configurar_hardware();
+   while(true){
+      output_toggle(PIN_B1);
+   }
+}
